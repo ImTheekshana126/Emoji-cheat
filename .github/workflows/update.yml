@@ -32,12 +32,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "docs(readme): update emoji-cheat-sheet"
-          git push -qf "https://${{ secrets.GITHUB_TOKEN }}@github.com/ikatyang/emoji-cheat-sheet.git" HEAD:github-actions-auto-update
+          git push -qf "https://${{ secrets.TOKEN }}@github.com/SenuGamerBoy/Emoji-cheat" HEAD:github-actions-auto-update
 
       - name: Create PR from Updated Branch
         uses: actions/github-script@v2
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.TOKEN}}
           script: |
             const {owner, repo} = context.repo
             const branch = 'github-actions-auto-update'
